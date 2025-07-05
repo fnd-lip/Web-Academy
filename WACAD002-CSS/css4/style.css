@@ -1,0 +1,103 @@
+body {
+    background-color: rgb(185, 209, 253);
+}
+
+.navbar {
+    display: flex;
+    margin: 16px;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background-color: black;
+    height: 32px;
+    padding: 10px 80px;
+
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.links {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7em;
+    display: flex;
+    gap: 20px;
+}
+
+.contact button {
+    color: white;
+    font-size: 0.6em;
+    padding: 4px 16px;
+    border-radius: 12px;
+    border-width: 0px;
+    background-color: rgb(12, 146, 146);
+}
+
+/* 2 barra */
+
+.navbar2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.5);
+  color: white;
+  background-color: black;
+  padding: 10px 80px;
+}
+
+.navbar2 .left {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.navbar2 .links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar2 .contact button {
+  color: white;
+  font-size: 0.6em;
+  padding: 4px 16px;
+  border-radius: 12px;
+  border-width: 0px;
+  background-color: rgb(12, 146, 146);
+}
+
+
+/* 3 barra */
+
+.navbar3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.5);
+  color: white;
+  background-color: black;
+  padding: 10px 80px;
+}
+
+.navbar3 .right {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.navbar3 .links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar3 .contact button {
+  color: white;
+  font-size: 0.6em;
+  padding: 4px 16px;
+  border-radius: 12px;
+  border-width: 0px;
+  background-color: rgb(12, 146, 146);
+}

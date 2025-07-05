@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #fff;
+  background: url('foto.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 30px;
+}
+
+.caixa {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 7px solid rgb(172, 113, 40);
+  border-radius: 20px;
+  padding: 50px 25px;
+  max-width:290px;
+  width: 100%;
+  box-shadow: 0 0 0 1px black;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+

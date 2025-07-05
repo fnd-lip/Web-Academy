@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div.blue { width: 100px; height: 200px; background-color: blue; position: relative;}
+div.yellow { width: 100px; height: 150px; background-color: yellow;position: relative;}
+div.red { width: 100px; height: 150px; background-color: red; position: relative;}
+div.green { width: 200px; height: 50px; background-color: green; position: relative;}
+
+@media (min-width: 600px) {
+  .blue {
+    top: 0;
+    left: 0;
+  }
+
+  .yellow {
+    top: -200px;
+    left: 100px;
+  }
+
+  .red {
+    top: -350px;
+    left: 200px;
+  }
+
+  .green {
+    top: -350px;
+    left: 100px;
+  }
+}

@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 130px); 
+  gap: 10px;
+  grid-template-areas:
+    "vermelho vermelho vermelho vermelho"
+    "verde verde magenta magenta"
+    "verde verde azul laranja";
+}
+
+.container > div {
+  border-radius: 8px;
+}
+
+.container > .vermelho {
+  background-color: darkred;
+  grid-area: vermelho;
+}
+
+.container > .azul {
+  background-color: darkblue;
+  grid-area: azul;
+}
+
+.container > .verde {
+  background-color: darkgreen;
+  grid-area: verde;
+}
+
+.container > .magenta {
+  background-color: purple;
+  grid-area: magenta;
+}
+
+.container > .laranja {
+  background-color: orange;
+  grid-area: laranja;
+}
