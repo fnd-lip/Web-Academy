@@ -1,0 +1,26 @@
+<body>
+  <h1>Lista</h1>
+
+  <div>
+    <p id="lista-titulo" name="lista">Meus itens:</p>
+  </div>
+
+  <ul id="lista-itens-1">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+    <li>item e</li>
+  </ul>
+  <script>
+    const lista = document.getElementById("lista-itens-1");
+    // cria um novo elemento li
+    const novoItem = document.createElement("li");
+    // cria um conteúdo de texto 
+    const texto = document.createTextNode("item e");
+    // add o texto ao li
+    novoItem.appendChild(texto);
+    //add o novo li a lista ul
+    lista.appendChild(novoItem);
+  </script>
+</body>

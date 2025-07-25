@@ -1,0 +1,40 @@
+<style>
+  h1 {
+    width: 350px;
+    padding: 20px;
+    background-color: lightblue;
+  }
+  .lista {
+    width: 350px;
+    padding: 20px;
+    color: white;
+    background-color: lightcoral;
+  }
+</style>
+
+<body>
+  <h1>Questão 03</h1>
+
+  <h3 id="lista-titulo">Meus itens:</h3>
+
+  <ul id="lista-itens">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+  <script>
+    //alterar do cor h1
+    const corH1 = document.querySelector("h1");
+    corH1.style.backgroundColor = "blue";
+
+    // adicionar classe lista ao h3
+    const tituloH3 = document.getElementById("lista-titulo");
+    tituloH3.classList.add("lista");
+    // adicionar negrito na classe hot
+    const negrito = document.querySelectorAll("#lista-itens .hot");
+    negrito.forEach(item => {
+      item.style.fontWeight = "bold";
+    });
+  </script>
+</body>

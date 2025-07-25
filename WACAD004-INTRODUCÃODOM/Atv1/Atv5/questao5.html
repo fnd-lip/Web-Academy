@@ -1,0 +1,46 @@
+<body>
+  <h1>Listas</h1>
+
+  <p id="lista-titulo" name="lista">Minhas listas:</p>
+
+  <ul class="lista-itens-1">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+
+  <ul class="lista-itens-2">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+
+  <ul class="lista-itens-3">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+
+  <ul class="lista-itens-4">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+
+  <script>
+    const lista2 = document.getElementsByClassName('lista-itens-2')[0]; 
+    const itensLista2 = lista2.getElementsByTagName('li'); 
+    //alterar a cor do texto dos itens da lista 2 para roxo
+    for (let i = 0; i < itensLista2.length; i++) {
+    itensLista2[i].style.color = 'purple'; }
+    //substituir a classe hot pela classe cold
+    for (let i = 0; i < itensLista2.length; i++) {
+    if (itensLista2[i].classList.contains('hot')) {
+        itensLista2[i].classList.replace('hot', 'cold'); 
+    }}
+  </script>
+</body>
