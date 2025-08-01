@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja SA - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- login -->
+    <div class="container-fluid vh-100">
+      <div class="row h-100">
+        <div class="col-md-4 bg-success text-white d-flex align-items-center justify-content-center text-center p-4">
+          <div>
+            <h2 class="fw-bold">Bem-vindo à SA Loja!</h2>
+            <p>Faça seu login para acessar nossos produtos</p>
+          </div>
+        </div>
+        <main class="col-md-8 d-flex justify-content-center align-items-center px-3" >
+          <form>
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Email" autocomplete="email" required/>
+            </div>
+            <div class="mb-3">
+              <label for="senha">Senha</label>
+              <input type="password" class="form-control" id="senha" placeholder="••••••" minlength="7" autocomplete="current-password" required />
+            </div>
+            <button type="submit" class="btn btn-success w-100 mb-3" aria-label="entrar na loja">
+              Entrar
+            </button>
+            <div class="text-center">
+              <a href="cadastro.html">não tenho cadastro</a>
+            </div>
+          </form>
+        </main>  
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>

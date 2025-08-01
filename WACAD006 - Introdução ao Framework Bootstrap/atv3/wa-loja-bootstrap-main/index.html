@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja SA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container-fluid"> 
+        <a class="navbar-brand fw-bold" href="#">Loja SA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="produtos.html">Gerenciar produtos</a>
+            </li>
+          </ul>
+          <button class="btn btn-secondary btn-outline-dark text-white" type="button">Sair</button>
+        </div>
+      </div>
+    </nav>
+    <!-- listagem de produtos -->
+    <div class="container my-5">
+      <h2 class="mb-4">Produtos:</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+       <div class="col">
+          <div class="card h-100">
+            <img src="/assets/pic1.jpg" class="card-img-top img-fluid w-100 object-fit-contain" style="height: 200px;" alt="pc1">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Microprocessadores</h5>
+              <p class="card-text text-muted">R$ 67,25</p>
+              <button class="btn btn-primary w-100">Adicionar no carrinho</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/assets/pic2.jpg" class="card-img-top img-fluid w-100 object-fit-contain" style="height: 200px;" alt="pic2">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Banco de Dados</h5>
+              <p class="card-text bg-light text-muted">R$ 61,42</p>
+              <button class="btn btn-primary w-100">Adicionar no carrinho</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/assets/pic3.jpg" class="card-img-top img-fluid w-100 object-fit-contain" style="height: 200px;" alt="pic3">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Análise de Regressão</h5>
+              <p class="card-text bg-light text-muted">R$ 61,42</p>
+              <button class="btn btn-primary w-100">Adicionar no carrinho</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/assets/pic4.jpg" class="card-img-top img-fluid w-100 object-fit-contain" style="height: 200px;" alt="pic4">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Circuitos Eletrônicos</h5>
+              <p class="card-text bg-light text-muted">R$ 67,23</p>
+              <button class="btn btn-secondary w-100" disabled>Indisponível</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carrossel -->
+    <div class="container mb-5">
+      <h2 class="mb-4">Destaques e Promoções</h2>
+      <div id="carouselDestaques" class="carousel slide carousel-fade bg-light rounded shadow-sm" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center p-4">
+                <img src="/assets/pic1.jpg" class="img-fluid rounded" style="max-height: 250px;" alt="Mangá Microprocessadores">
+              </div>
+              <div class="col-md-6 p-4">
+                <h4 class="text-primary fw-bold">Mangá de Microprocessadores</h4>
+                <p class="text-danger mb-1 fw-semibold">R$ 59,90 <small class="text-muted"><del>R$ 67,25</del></small></p>
+                <p class="text-muted mb-3">Aprenda arquitetura de CPUs com narrativas visuais e exemplos lúdicos.</p>
+                <button class="btn btn-primary px-4 py-2">Comprar Agora</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center p-4">
+                <img src="/assets/pic2.jpg" class="img-fluid rounded" style="max-height: 250px;" alt="Mangá Banco de Dados">
+              </div>
+              <div class="col-md-6 p-4">
+                <h4 class="text-primary fw-bold">Mangá de Banco de Dados</h4>
+                <p class="text-success mb-1 fw-semibold">Frete Grátis</p>
+                <p class="text-muted mb-3">Apenas R$ 61,42</p>
+                <button class="btn btn-primary px-4 py-2">Adicionar ao Carrinho</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center p-4">
+                <img src="/assets/pic3.jpg" class="img-fluid rounded" style="max-height: 250px;" alt="Mangá Regressão">
+              </div>
+              <div class="col-md-6 p-4">
+                <h4 class="text-primary fw-bold">Mangá de Análise de Regressão</h4>
+                <p class="text-danger mb-1 fw-semibold">R$ 54,90 <small class="text-muted"><del>R$ 61,42</del></small></p>
+                <p class="text-muted mb-3">Conceitos estatísticos explicados de forma divertida e acessível.</p>
+                <button class="btn btn-primary px-4 py-2">Comprar Agora</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center p-4">
+                <img src="/assets/pic4.jpg" class="img-fluid rounded" style="max-height: 250px;" alt="Mangá Circuitos">
+              </div>
+              <div class="col-md-6 p-4">
+                <h4 class="text-primary fw-bold">Mangá de Circuitos Eletrônicos</h4>
+                <p class="text-muted mb-3">Produto temporariamente indisponível.</p>
+                <button class="btn btn-secondary px-4 py-2" disabled>Indisponível</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
