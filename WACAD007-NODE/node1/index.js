@@ -2,7 +2,7 @@ const http = require("http")
 const fs = require("fs")
 const dotenv = require("dotenv")
 
-dotenv.config()
+dotenv.config({path: `.env.${process.env.NODE_ENV}`, quiet: true})
 
 const targetDir = process.argv[2]
 const PORT = process.env.PORT
