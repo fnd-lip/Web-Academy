@@ -1,0 +1,1 @@
+CommonJS é um padrão para módulos JavaScript, popular em aplicações do lado do servidor (como Node.js) e em bibliotecas cliente-servidor. Ele define como dividir o código em módulos, exportar funcionalidades e importá-las em outros módulos. 
