@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon --watch . --ext js,json index.js ./public",
-    "start:prod": "node index.js ./public",
+    "start": "cross-env NODE_ENV=development nodemon --watch . --ext js,json index.js ./public",
+    "start:prod": "cross-env NODE_ENV=production node index.js ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "dotenv": "^17.2.1"
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
     "nodemon": "^3.1.10"
   }
 }
