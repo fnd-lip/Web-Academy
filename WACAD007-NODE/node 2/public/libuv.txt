@@ -1,0 +1,1 @@
+Libuv is a multi-platform C library that serves as a core component of Node.js, providing the underlying infrastructure for its asynchronous, non-blocking I/O operations and event-driven architecture
