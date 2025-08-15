@@ -1,0 +1,52 @@
+body {
+    background-color: #f3f6f9;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.form-lorem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-lorem label {
+    font-weight: bold;
+}
+
+.form-lorem input {
+    padding: 6px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 60px;
+    text-align: center;
+}
+
+.form-lorem button {
+    padding: 6px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.form-lorem button:hover {
+    background-color: #e6e6e6;
+}
+
+p {
+    max-width: 800px;
+    margin: 15px auto;
+    text-align: justify;
+    line-height: 1.6;
+}
