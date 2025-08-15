@@ -17,6 +17,3 @@ Exercício III
 ```bash
   npm run start:prod
 ```
-
-## Print da tela
-
