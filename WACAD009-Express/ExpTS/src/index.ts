@@ -1,12 +1,18 @@
-import express from 'express'
+import express, {Request, Response} from 'express'
 import dotenv from 'dotenv'
-
-dotenv.config({quiet: true})
+import validateEnv from './utils/validateEnv.js'
 
 const app = express()
-const PORT = process.env.PORT ?? 6677
+dotenv.config({quiet: true})
+const env = validateEnv()
 
-app.get('/', (req, res) => {
+console.log(env.NODE_ENV)
+console.log(typeof process.env.PORT)
+console.log(typeof env.PORT)
+
+const PORT = env.PORT
+
+app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!🙂')
 })
 
