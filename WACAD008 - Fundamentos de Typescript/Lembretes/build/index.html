@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembretes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-light">
+  <div class="container py-4">
+    <header class="p-4 mb-4 text-center bg-primary text-white rounded shadow-sm">
+      <h1 class="mb-1">
+        <i class="bi bi-stickies"></i> Lembretes
+      </h1>
+      <p class="lead mb-0">Organize suas tarefas de forma simples</p>
+    </header>
+    <section aria-labelledby="formulario-lembrete" class="mb-4">
+      <h2 id="formulario-lembrete" class="visually-hidden">Adicionar novo lembrete</h2>
+      <form id="form" class="row g-2">
+        <div class="col-md-5">
+          <input id="titulo" class="form-control" placeholder="Título" required>
+        </div>
+        <div class="col-md-5">
+          <input id="descricao" class="form-control" placeholder="Descrição">
+        </div>
+        <div class="col-md-2 d-grid">
+          <button class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Adicionar
+          </button>
+        </div>
+      </form>
+    </section>
+    <section aria-labelledby="lista-lembretes">
+      <h2 id="lista-lembretes" class="visually-hidden">Lista de lembretes</h2>
+      <div id="lista" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+
+</html>
