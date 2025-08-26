@@ -1,9 +1,9 @@
-import express, {Request, Response} from 'express'
+import express, { Request, Response } from 'express'
 import dotenv from 'dotenv'
 import validateEnv from './utils/validateEnv.js'
 
 const app = express()
-dotenv.config({quiet: true})
+dotenv.config({ quiet: true })
 const env = validateEnv()
 
 console.log(env.NODE_ENV)
