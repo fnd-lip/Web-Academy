@@ -1,16 +1,18 @@
 import express, { Request, Response } from 'express'
-import dotenv from 'dotenv'
-import validateEnv from './utils/validateEnv.js'
+import getEnv from './utils/getEnv.js'
+import logger from './middlewares/logger.js'
 
 const app = express()
-dotenv.config({ quiet: true })
-const env = validateEnv()
-
-console.log(env.NODE_ENV)
-console.log(typeof process.env.PORT)
-console.log(typeof env.PORT)
+const env = getEnv()
 
 const PORT = env.PORT
+
+app.use(logger('completo'))
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`)
+  next()
+})
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!🙂')
