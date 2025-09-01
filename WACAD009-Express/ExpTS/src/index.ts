@@ -3,12 +3,18 @@ import getEnv from './utils/getEnv.js'
 import logger from './middlewares/logger.js'
 import router from './router/router.js'
 import { engine } from 'express-handlebars'
+import helpers from './views/helpers/helpers.js'
 const app = express()
 const env = getEnv()
 
 const PORT = env.PORT
 
-app.engine('handlebars', engine())
+app.engine(
+  'handlebars',
+  engine({
+    helpers,
+  }),
+)
 app.set('view engine', 'handlebars')
 app.set('views', `${process.cwd()}/src/views`)
 
