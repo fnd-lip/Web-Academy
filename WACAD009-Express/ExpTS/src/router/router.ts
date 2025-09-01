@@ -81,4 +81,9 @@ router.get('/hb4', (req, res) => {
   res.render('hb4', { tecs })
 })
 
+router.get('/hb5', (req, res) => {
+  res.render('hb5')
+})
+
+
 export default router
