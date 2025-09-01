@@ -42,7 +42,7 @@ router.get('/lorem/:qtd', (req: Request, res: Response) => {
 router.get('/hb1', (req, res) => {
   res.render('hb1', {
     mensagem: 'Olá, você está aprendendo Express + HBS!',
-    layout: false,
+    
   })
 })
 
@@ -51,7 +51,7 @@ router.get('/hb2', (req, res) => {
     poweredByNodejs: true,
     name: 'Express',
     type: 'Framework',
-    layout: false,
+    
   })
 })
 
@@ -64,7 +64,7 @@ router.get('/hb3', (req, res) => {
   ]
   res.render('hb3', {
     profes,
-    layout: false,
+    
   })
 })
 
@@ -78,7 +78,7 @@ router.get('/hb4', (req, res) => {
     { name: 'Docker', type: 'Virtualization', poweredByNodejs: false },
     { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
   ]
-  res.render('hb4', { tecs, layout: false })
+  res.render('hb4', { tecs })
 })
 
 export default router
