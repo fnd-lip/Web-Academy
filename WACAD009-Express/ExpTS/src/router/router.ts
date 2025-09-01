@@ -62,7 +62,23 @@ router.get('/hb3', (req, res) => {
     { nome: 'Edleno Moura', sala: 1236 },
     { nome: 'Elaine Harada', sala: 1231 },
   ]
-  res.render('hb3', { profes, layout: false })
+  res.render('hb3', {
+    profes,
+    layout: false,
+  })
+})
+
+router.get('/hb4', (req, res) => {
+  const tecs = [
+    { name: 'Express', type: 'Framework', poweredByNodejs: true },
+    { name: 'Laravel', type: 'Framework', poweredByNodejs: false },
+    { name: 'React', type: 'Library', poweredByNodejs: true },
+    { name: 'Handlebars', type: 'Engine View', poweredByNodejs: true },
+    { name: 'Django', type: 'Framework', poweredByNodejs: false },
+    { name: 'Docker', type: 'Virtualization', poweredByNodejs: false },
+    { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
+  ]
+  res.render('hb4', { tecs, layout: false })
 })
 
 export default router
