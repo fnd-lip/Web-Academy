@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "nodemon --watch src --exec tsx src/index.ts",
+    "sass": "sass --watch public/scss/main.scss public/css/main.css",
     "build": "tsc",
     "start:prod": "node build/index.js",
     "lint": "eslint src --fix",
@@ -17,7 +18,8 @@
     "envalid": "^8.1.0",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.3",
-    "lorem-ipsum": "^2.0.8"
+    "lorem-ipsum": "^2.0.8",
+    "sass": "^1.91.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",

@@ -41,7 +41,7 @@ router.get('/lorem/:qtd', (req: Request, res: Response) => {
 
 router.get('/hb1', (req, res) => {
   res.render('hb1', {
-    mensagem: 'Olá, você está aprendendo Express + HBS!',
+    mensagem: 'Universiade Federal do Amazonas',
     
   })
 })
