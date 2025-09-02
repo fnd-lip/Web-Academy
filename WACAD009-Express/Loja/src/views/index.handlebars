@@ -1,0 +1,26 @@
+<h1>Listagem de Produtos</h1>
+<div class='d-flex flex-wrap gap-3'>
+  {{#each produtos}}
+    <div class='card' style='width: 18rem;'>
+      <img
+        src='{{image}}'
+        class='card-img-top product-image mx-auto img-fluid mt-3'
+        alt='{{title}}'
+      />
+      <div class='card-body'>
+        <h5 class='card-title mb-0'>{{title}}</h5>
+      </div>
+      <ul class='list-group list-group-flush'>
+        <li class='list-group-item'><b>Categoria:</b>{{category}}</li>
+        <li class='list-group-item'><b>Preço:</b>R$ {{price}}</li>
+        <li class='list-group-item'><b>Avaliação:</b>⭐{{rating.count}} votos</li>
+        <li class='list-group-item'>
+          <a
+            href='/produto/{{id}}'
+            class='btn btn-primary d-block'
+          >Detalhes</a></li>
+      </ul>
+    </div>
+
+  {{/each}}
+</div>
