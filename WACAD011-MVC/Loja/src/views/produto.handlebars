@@ -1,0 +1,15 @@
+<div class='row'>
+  <div class='col-2'>
+    <img src='{{produto.image}}' alt='' srcset='' class='mx-auto img-fluid' />
+  </div>
+  <div class='col-10'>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>{{produto.title}}</h2>
+        <h2><a href="/"><i class="bi bi-arrow-left-square"></i></a></h2>
+    </div>
+    <p>{{produto.description}}</p>
+    <p><b>Categoria: </b>{{produto.category}}</p>
+    <p><b>Preço: </b>{{produto.price}}</p>
+    <p><b>Avaliação: </b>{{produto.rating.rate}} ⭐ ({{produto.rating.count}} votos)</p>
+  </div>
+</div>
