@@ -3,3 +3,5 @@ node_modules/
 !logs
 logs/logs.log
 
+
+/src/generated/prisma
