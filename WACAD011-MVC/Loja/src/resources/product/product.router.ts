@@ -10,6 +10,5 @@ router.get('/read/:id', productController.read)
 router.get('/update/:id', productController.update)
 router.post('/update/:id', productController.update)
 router.post('/remove/:id', productController.remove)
-router.get('/', productController.index)
 
 export default router

@@ -10,6 +10,7 @@ import {
   getProduct,
   getProducts,
   removeProduct,
+  updateProduct,
 } from './product.service'
 import { CreateProductDto } from './product.types'
 import productSchema from './product.schema'
@@ -57,7 +58,7 @@ const read = async (req: Request, res: Response) => {
   if (!id) return res.status(400).json({ msg: 'rota inexistente' })
   try {
     const product = await getProduct(id)
-    const quantityArray = Array.from({ length:10}, (value, i) => i + 1) 
+    const quantityArray = Array.from({ length: 10}, (value, i) => i + 1)
     if (!product)
       return res
         .status(404)
@@ -73,6 +74,36 @@ const update = async (req: Request, res: Response) => {
   const product = await getProduct(id)
   if (req.method === 'GET') {
     res.render('product/update', { product })
+  } 
+
+  if (req.method === 'POST') {
+    try {
+      const errors = validator(productSchema, req.body)
+
+      if (Object.keys(errors).length > 0) {
+        return res.render('product/update', { product: req.body, errors })
+      }
+
+      let imagePath = product!.image
+      if (req.files && req.files.image) {
+        const image = req.files.image as UploadedFile
+        const publicFolder = `${process.cwd()}/public`
+        imagePath = `/img/product/${uuidv4()}-${image.name}`
+        await image.mv(`${publicFolder}${imagePath}`)
+      }
+
+      const updatedProduct = {
+        ...(req.body as CreateProductDto),
+        stock: parseInt(req.body.stock),
+        image: imagePath,
+      }
+
+      await updateProduct(id, updatedProduct)
+      res.redirect('/product')
+    } catch (err) {
+      console.log(err)
+      res.status(500).json({ msg: 'Erro ao atualizar o produto' })
+    }
   }
 }
 

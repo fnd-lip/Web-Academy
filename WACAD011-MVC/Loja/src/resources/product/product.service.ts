@@ -22,6 +22,17 @@ export async function getProduct(id: string): Promise<Product | null> {
   return prisma.product.findFirst({ where: { id } })
 }
 
+export async function updateProduct(
+  id: string,
+  product: Partial<CreateProductDto>
+): Promise<Product> {
+  return prisma.product.update({
+    where: { id },
+    data: product,
+  })
+}
+
 export async function removeProduct(id: string): Promise<Product | null> {
   return prisma.product.update({ where: { id }, data: { status: 0 } })
 }
+
