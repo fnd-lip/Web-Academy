@@ -1,6 +1,10 @@
-<h1>Listagem de Produtos</h1>
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Listagem de Produtos</h1>
+  <div><a href="/product/create"><i class="bi bi-plus-square fs-3"></i></a></div>
+
+</div>
 <div class='d-flex flex-wrap gap-3'>
-  {{#each produtos}}
+  {{#each products}}
     <div class='card' style='width: 18rem;'>
       <img
         src='{{image}}'
@@ -8,15 +12,14 @@
         alt='{{title}}'
       />
       <div class='card-body'>
-        <h5 class='card-title mb-0'>{{title}}</h5>
+        <h5 class='card-title mb-0'>{{name}}</h5>
       </div>
       <ul class='list-group list-group-flush'>
-        <li class='list-group-item'><b>Categoria:</b>{{category}}</li>
         <li class='list-group-item'><b>Preço:</b>R$ {{price}}</li>
-        <li class='list-group-item'><b>Avaliação:</b>⭐{{rating.count}} votos</li>
+        <li class='list-group-item'><b>Estoque:</b>{{stock}}</li>
         <li class='list-group-item'>
           <a
-            href='/product/{{id}}'
+            href='/product/read/{{id}}'
             class='btn btn-primary d-block'
           >Detalhes</a></li>
       </ul>
