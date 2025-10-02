@@ -1,0 +1,18 @@
+h1 {
+  color: black;
+}
+
+div.bloco {
+  color: black;
+}
+
+.product-image {
+  max-height: 100px;
+  width: auto;
+}
+
+a {
+  color: black;
+}
+
+/*# sourceMappingURL=main.css.map */

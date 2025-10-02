@@ -1,0 +1,88 @@
+<div class='row'>
+  <div class='col-2'>
+    <img src='{{product.image}}' alt='' srcset='' class='mx-auto img-fluid' />
+  </div>
+  <div class='col-10'>
+    <div class='d-flex justify-content-between align-items-center'>
+      <h2>{{product.name}}<a
+          href='#'
+          data-bs-toggle='modal'
+          data-bs-target='#remove-modal'
+        ><i class='bi bi-trash fs-4'></i></a>
+        <a href='/product/update/{{product.id}}'><i
+            class='bi bi-pencil-square fs-4'
+          ></i></a>
+      </h2>
+      <div><a href='/product'><i
+            class='bi bi-arrow-left-square fs-3'
+          ></i></a></div>
+    </div>
+    <p>{{product.description}}</p>
+    <p><b>Estoque: </b>{{product.stock}}</p>
+    <p><b>Preço: </b>{{product.price}}</p>
+    <div class='col-2'>
+      <form
+        action='/purchaseItem/add'
+        method='post'
+        enctype='multipart/form-data'
+      >
+        <input type='hidden' name="productId" value="{{product.id}}" >
+        <label for='quantity'> Quantidade</label>
+        <select
+          id='quantity'
+          name='quantity'
+          class='form-select form-select-sm'
+          aria-label='Small select example'
+        >
+          {{#each quantityArray}}
+            <option value='{{this}}'>{{this}}</option>
+          {{/each}}
+
+        </select>
+        <button
+          type='submit'
+          class='btn btn-primary btn-sm mt-2 w-100'
+        >Adicionar ao Carrinho</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class='modal fade'
+  id='remove-modal'
+  tabindex='-1'
+  aria-labelledby='exampleModalLabel'
+  aria-hidden='true'
+>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='exampleModalLabel'>Deleção de Produto</h1>
+        <button
+          type='button'
+          class='btn-close'
+          data-bs-dismiss='modal'
+          aria-label='Close'
+        ></button>
+      </div>
+      <div class='modal-body'>
+        Deseja mesmo deletar o produto
+        <b>{{product.name}}</b>?
+      </div>
+      <div class='modal-footer'>
+        <button
+          type='button'
+          class='btn btn-secondary'
+          data-bs-dismiss='modal'
+        >Cancelar</button>
+        <button
+          onclick="removeProduct('{{product.id}}')"
+          type='button'
+          class='btn btn-primary'
+        >sim, deletar!</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h2 class="mb-0">Carrinho de Compra</h2>
+<h5>Total: R$ {{totalPrice}}</h5>
+<div class="d-flex gap-3">
+  {{#each cartItems}}
+    <div div class='card' style='width: 18rem;'>
+      <img src = "{{product.image}}" class='card-img-top px-4' src='.../100px180/' alt='...' />
+      <div class='card-body'>
+        <h5 class='card-title'>{{product.name}}</h5>
+        <p class='card-text mb-0'><b>Quantidade:</b> {{quantity}} 
+        <a href="#" onClick = "decreaseItem('{{product.id}}')"><i class="bi bi-dash-square"></i></a>
+        <a href="#" onClick = "increaseItem('{{product.id}}')"><i class="bi bi-plus-square"></i></a>
+        <a href="#" onClick = "removeItem('{{product.id}}')"><i class="bi bi-trash"></i></a>
+        </p>
+        <p class='card-text'><b>Preço Unitário:</b>R$ {{product.price}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>
