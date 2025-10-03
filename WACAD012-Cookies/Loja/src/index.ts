@@ -1,10 +1,23 @@
 import express from 'express'
-import getEnv from './utils/getEnv.js'
-import logger from './middlewares/logger.js'
-import router from './router/router.js'
 import fileUpload from 'express-fileupload'
 import { engine } from 'express-handlebars'
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
+import { v4 as uuidv4 } from 'uuid'
+
+import getEnv from './utils/getEnv.js'
+import logger from './middlewares/logger.js'
+import setTheme from './middlewares/setTheme.js'
+import setGuestPurchaseId from './middlewares/setGuestPurchaseId.js'
+import router from './router/router.js'
 import helpers from './views/helpers/helpers.js'
+
+declare module 'express-session' {
+  interface SessionData {
+    guestPurchaseId: string
+  }
+}
+
 const app = express()
 const env = getEnv()
 
@@ -22,6 +35,18 @@ app.set('views', `${process.cwd()}/src/views`)
 
 app.use(logger('completo'))
 app.use(fileUpload())
+app.use(cookieParser())
+app.use(setTheme)
+app.use(
+  session({
+    genid: () => uuidv4(),
+    secret: env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 2 * 60 * 60 * 1000 },
+  }),
+)
+app.use(setGuestPurchaseId)
 
 app.use('/js', express.static(`${process.cwd()}/public/js`))
 app.use('/css', express.static(`${process.cwd()}/public/css`))

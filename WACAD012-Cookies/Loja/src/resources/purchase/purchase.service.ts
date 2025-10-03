@@ -3,19 +3,19 @@ import { PurchaseStatus } from './purchase.constants'
 
 const prisma = new PrismaClient()
 
-export const findOrCreatePurchaseCart = async (): Promise<Purchase> => {
+export const findOrCreatePurchaseCart = async (id: string): Promise<Purchase> => {
   let purchase = await prisma.purchase.findFirst({
-    where: { status: PurchaseStatus.opened },
+    where: { id }
   })
   if (!purchase)
     purchase = await prisma.purchase.create({
-      data: { status: PurchaseStatus.opened },
+      data: { id, status: PurchaseStatus.opened },
     })
   return purchase
 }
 
-export const findItemsFromPurchaseCart = async () => {
-  const cart = await findOrCreatePurchaseCart()
+export const findItemsFromPurchaseCart = async (id: string) => {
+  const cart = await findOrCreatePurchaseCart(id)
   return prisma.purchase.findFirst({
     where: {
       id: cart.id,
