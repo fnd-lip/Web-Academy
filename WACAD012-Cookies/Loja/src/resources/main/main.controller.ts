@@ -4,7 +4,7 @@ const index = (req: Request, res: Response) => {
   res.render('main/index')
 }
 
-const hb1 =  (req: Request, res: Response) => {
+const hb1 = (req: Request, res: Response) => {
   res.render('main/hb1', {
     mensagem: 'Universiade Federal do Amazonas',
   })
@@ -51,4 +51,34 @@ const sobre = (req: Request, res: Response) => {
   res.render('main/sobre')
 }
 
-export default {index, hb1, hb2, hb3, hb4, hb5, sobre }
+const createCookie = (req: Request, res: Response) => {
+  if (!('new-cookie' in req.cookies)) {
+    res.cookie('new-cookie', 1234)
+    res.send('Você nunca passou por aqui!')
+  } else {
+    res.send('Você já passou por aqui!!')
+  }
+}
+const clearCookie = (req: Request, res: Response) => {
+  res.clearCookie('new-cookie').send('Cookie apagado')
+}
+
+const changeTheme = (req: Request, res: Response) => {
+  const { theme } = req.params
+  if (!theme) return res.send('O parâmetro theme é obrigatório')
+  res.cookie('theme', theme)
+  res.redirect('/')
+}
+
+export default {
+  index,
+  hb1,
+  hb2,
+  hb3,
+  hb4,
+  hb5,
+  sobre,
+  createCookie,
+  clearCookie,
+  changeTheme
+}

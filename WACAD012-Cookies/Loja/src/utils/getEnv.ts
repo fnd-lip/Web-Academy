@@ -6,6 +6,7 @@ dotenv.config({ quiet: true })
 function getEnv() {
   return cleanEnv(process.env, {
     PORT: port({ default: 80 }),
+    SESSION_SECRET: str({ default: 'secret1' }),
     NODE_ENV: str({
       choices: ['development', 'production'],
       default: 'development',

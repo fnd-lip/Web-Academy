@@ -26,8 +26,8 @@ export const addItemToPurchaseCart = async (
   })
 }
 
-export const increaseItemQuantity = async (productId: string) => {
-  const cart = await findOrCreatePurchaseCart()
+export const increaseItemQuantity = async (purchaseId: string, productId: string) => {
+  const cart = await findOrCreatePurchaseCart(purchaseId)
   return prisma.purchaseItem.update({
     where: {
       productId_purchaseId: {
@@ -43,8 +43,8 @@ export const increaseItemQuantity = async (productId: string) => {
   })
 }
 
-export const decreaseItemQuantity = async (productId: string) => {
-  const cart = await findOrCreatePurchaseCart()
+export const decreaseItemQuantity = async (purchaseId: string,productId: string) => {
+  const cart = await findOrCreatePurchaseCart(purchaseId)
   return prisma.purchaseItem.update({
     where: {
       productId_purchaseId: {
@@ -60,8 +60,8 @@ export const decreaseItemQuantity = async (productId: string) => {
   })
 }
 
-export const removeItemFromCart = async (productId: string) => {
-  const cart = await findOrCreatePurchaseCart()
+export const removeItemFromCart = async (purchaseId: string,productId: string) => {
+  const cart = await findOrCreatePurchaseCart(purchaseId)
   return prisma.purchaseItem.delete({
     where: {
       productId_purchaseId: {

@@ -10,5 +10,9 @@ router.get('/hb3', mainController.hb3)
 router.get('/hb4', mainController.hb4)
 router.get('/hb5', mainController.hb5)
 router.get('/sobre', mainController.sobre)
+router.get('/create-cookie', mainController.createCookie)
+router.get("/clear-cookie", mainController.clearCookie)
+router.get("/change-theme/:theme", mainController.changeTheme)
+
 
 export default router
