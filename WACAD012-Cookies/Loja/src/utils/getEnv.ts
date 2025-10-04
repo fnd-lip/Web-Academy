@@ -1,4 +1,4 @@
-import { cleanEnv, port, str } from 'envalid'
+import { cleanEnv, port, str, num } from 'envalid'
 import dotenv from 'dotenv'
 
 dotenv.config({ quiet: true })
@@ -12,6 +12,7 @@ function getEnv() {
       default: 'development',
     }),
     LOGGER_DIR: str({ default: 'logs' }),
+    BCRYPT_ROUNDS: num()
   })
 }
 
