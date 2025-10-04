@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "nodemon --watch src --exec tsx src/index.ts --ext ts,js,json,handlebars",
+    "seeds": "tsx prisma/seed.ts",
     "sass": "sass --watch public/scss/main.scss public/css/main.css",
     "build": "tsc",
     "start:prod": "node build/index.js",
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.16.2",
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.1",
     "envalid": "^8.1.0",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
+    "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.3",
     "@types/express-fileupload": "^1.5.1",
