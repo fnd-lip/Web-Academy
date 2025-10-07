@@ -4,22 +4,29 @@ import { engine } from 'express-handlebars'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import { v4 as uuidv4 } from 'uuid'
+import { PrismaSessionStore } from '@quixo3/prisma-session-store'
 
-import getEnv from './utils/getEnv.js'
-import logger from './middlewares/logger.js'
-import setTheme from './middlewares/setTheme.js'
-import setGuestPurchaseId from './middlewares/setGuestPurchaseId.js'
+import getEnv from './utils/getEnv'
+import logger from './middlewares/logger'
+import setTheme from './middlewares/setTheme'
+import setLocals from './middlewares/setLocals'
+import setGuestPurchaseId from './middlewares/setGuestPurchaseId'
 import router from './router/router.js'
-import helpers from './views/helpers/helpers.js'
+import helpers from './views/helpers/helpers'
+import { PrismaClient } from './generated/prisma'
 
 declare module 'express-session' {
   interface SessionData {
     guestPurchaseId: string
+    isAuth: boolean
+    userId: string
+    isAdmin: boolean
   }
 }
 
 const app = express()
 const env = getEnv()
+const prisma = new PrismaClient()
 
 const PORT = env.PORT
 
@@ -44,8 +51,13 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 2 * 60 * 60 * 1000 },
-  }),
+    store: new PrismaSessionStore(prisma, {
+      checkPeriod: 60 * 60 * 1000,
+      dbRecordIdIsSessionId: true,
+    })
+  })
 )
+app.use(setLocals)
 app.use(setGuestPurchaseId)
 
 app.use('/js', express.static(`${process.cwd()}/public/js`))

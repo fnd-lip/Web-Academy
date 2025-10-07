@@ -1,7 +1,6 @@
 import { Request, Response } from 'express'
 import { AddItemToPurchaseCartDto } from './purchaseItem.types'
 import { findOrCreatePurchaseCart } from '../purchase/purchase.service'
-import { error } from 'node:console'
 import {
   addItemToPurchaseCart,
   decreaseItemQuantity,
@@ -18,7 +17,8 @@ const add = async (req: Request, res: Response) => {
     if (!req.session.guestPurchaseId!)
       throw new Error('Id do carrinho de compra não gerado')
     const purChaseCart = await findOrCreatePurchaseCart(
-      req.session.guestPurchaseId
+      req.session.guestPurchaseId,
+      req.session.userId,
     )
     await addItemToPurchaseCart(purchaseItem, purChaseCart)
     res.redirect('/product')
@@ -33,8 +33,9 @@ const increase = async (req: Request, res: Response) => {
   const { id } = req.params
   if (!id) return res.status(400).json({ msg: 'O id é obrigatório' })
   try {
-    if(!req.session.guestPurchaseId) throw new Error('Id do carrinho não foi criado')
-    await increaseItemQuantity(req.session.guestPurchaseId,id)
+    if (!req.session.guestPurchaseId)
+      throw new Error('Id do carrinho não foi criado')
+    await increaseItemQuantity(req.session.guestPurchaseId, id)
     res.status(200).json({ msg: 'Incremento bem sucedido', success: true })
   } catch (err) {
     res.status(500).json({ msg: 'Incremento mal sucedido', success: false })
@@ -45,8 +46,9 @@ const decrease = async (req: Request, res: Response) => {
   const { id } = req.params
   if (!id) return res.status(400).json({ msg: 'O id é obrigatório' })
   try {
-    if (!req.session.guestPurchaseId) throw new Error('Id do carrinho não foi criado')
-    await decreaseItemQuantity(req.session.guestPurchaseId,id)
+    if (!req.session.guestPurchaseId)
+      throw new Error('Id do carrinho não foi criado')
+    await decreaseItemQuantity(req.session.guestPurchaseId, id)
     res.status(200).json({ msg: 'Decremento bem sucedido', success: true })
   } catch (err) {
     res.status(500).json({ msg: 'Decremento mal sucedido', success: false })
@@ -57,8 +59,9 @@ const remove = async (req: Request, res: Response) => {
   const { id } = req.params
   if (!id) return res.status(400).json({ msg: 'O id é obrigatório' })
   try {
-    if (!req.session.guestPurchaseId) throw new Error('Id do carrinho não foi criado')
-    await removeItemFromCart(req.session.guestPurchaseId,id)
+    if (!req.session.guestPurchaseId)
+      throw new Error('Id do carrinho não foi criado')
+    await removeItemFromCart(req.session.guestPurchaseId, id)
     res.status(200).json({ msg: 'Item removido com sucesso', success: true })
   } catch (err) {
     res.status(500).json({ msg: 'Erro ao remover item', success: false })

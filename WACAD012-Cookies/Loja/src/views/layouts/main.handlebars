@@ -56,6 +56,22 @@
                 <li><a class='dropdown-item' href='/hb5'>HB5</a></li>
               </ul>
             </li>
+            {{#if isAdmin}}
+            <li class='nav-item dropdown'>
+              <a
+                class='nav-link dropdown-toggle'
+                href='#'
+                role='button'
+                data-bs-toggle='dropdown'
+                aria-expanded='false'
+              >
+                Usuários
+              </a>
+              <ul class='dropdown-menu'>
+                <li><a class='dropdown-item' href='/user/create'>adicionar usuário</a></li>
+              </ul>
+            </li>
+            {{/if}}
             <li class='nav-item dropdown'>
               <a
                 class='nav-link dropdown-toggle'
@@ -74,13 +90,19 @@
           </ul>
           <div>
             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+              {{#if isAuth}}
+              <li class='nav-item'>
+               <a class="nav-link px-3" href="/auth/logout">Logout</a>
+              </li>
+              {{else}}
               <li class='nav-item'>
                <a class="nav-link" href="/auth/signup">Criar conta</a>
               </li>
               <li class='nav-item'>
-               <a class="nav-link px-3" href="/auth/signup">Login</a>
+               <a class="nav-link px-3" href="/auth/login">Login</a>
               </li>
-              <li class='nav-item'>
+              {{/if}}
+              <li class='nav-item mt-1'>
                <a href="/purchase/cart"><i class="bi bi-cart2 fs-3 {{#if themeLight}} text-black {{else}}text-white {{/if}}"></i></a>
               </li>
           </div>
