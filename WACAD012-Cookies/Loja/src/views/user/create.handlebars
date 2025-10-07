@@ -1,10 +1,10 @@
 <div class='d-flex justify-content-between align-items-center'>
-  <h1>Criação de Conta</h1>
+  <h1>Criação de usuários</h1>
   <div><a href='/'><i class='bi bi-arrow-left-square fs-3'></i></a></div>
 </div>
 
 <div class='col-8'>
-  <form action='/auth/signup' method='post' enctype='multipart/form-data'>
+  <form action='/user/create' method='post' enctype='multipart/form-data'>
     <div class='mb-3'>
       <label for='name' class='form-label'>Seu nome</label>
       <input
@@ -61,6 +61,14 @@
         {{errors.repeatPassword}}     
       </div>
     </div>
+    <div class="mb-3">
+      <label for='typeId' class='form-label'>Selecione o tipo de usuário</label>
+      <select id="typeId" name="typeId" class="form-select" aria-label="Selecione o tipo de usuário">
+        <option value="1">Administrador</option>
+        <option value="2">Cliente</option>
+      </select>
+    </div>
+    
     <div class='mb-3 d-flex flex-row-reverse'>
       <button type='submit' class='btn btn-primary'>Enviar</button>
     </div>

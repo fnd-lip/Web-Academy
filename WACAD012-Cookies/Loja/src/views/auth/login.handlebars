@@ -1,31 +1,17 @@
 <div class='d-flex justify-content-between align-items-center'>
-  <h1>Criação de Conta</h1>
+  <h1>Login de usuario</h1>
   <div><a href='/'><i class='bi bi-arrow-left-square fs-3'></i></a></div>
 </div>
 
 <div class='col-8'>
-  <form action='/auth/signup' method='post' enctype='multipart/form-data'>
-    <div class='mb-3'>
-      <label for='name' class='form-label'>Seu nome</label>
-      <input
-        type='text'
-        class='form-control {{#if errors.name}}is-invalid{{/if}}'
-        name="name"
-        value="{{user.name}}"
-        id='name'
-        placeholder='João da Silva'
-      />
-      <div class="invalid-feedback">
-        {{errors.name}}     
-      </div>
-    </div>
+  <form action='/auth/login' method='post' enctype='multipart/form-data'>
     <div class='mb-3'>
       <label for='email' class='form-label'>Seu email</label>
       <input
         type='text'
         class='form-control {{#if errors.email}}is-invalid{{/if}}'
+        value="{{credentials.email}}"
         name="email"
-        value="{{user.email}}"
         id='email'
         placeholder='joao@exemplo.com'
       />
@@ -37,28 +23,14 @@
       <label for='password' class='form-label'>Sua senha</label>
       <input
         type='password'
-        value="{{user.password}}"
         class='form-control {{#if errors.password}}is-invalid{{/if}}'
+        value="{{credentials.password}}"
         name="password"
         id='password'
         placeholder='********'
       />
       <div class="invalid-feedback">
         {{errors.password}}     
-      </div>
-    </div>
-    <div class='mb-3'>
-      <label for='repeatPassword' class='form-label'>Repita sua senha</label>
-      <input
-        type='password'
-        value="{{user.repeatPassword}}"
-        class='form-control {{#if errors.repeatPassword}}is-invalid{{/if}}'
-        name="repeatPassword"
-        id='repeatPassword'
-        placeholder='********'
-      />
-      <div class="invalid-feedback">
-        {{errors.repeatPassword}}     
       </div>
     </div>
     <div class='mb-3 d-flex flex-row-reverse'>

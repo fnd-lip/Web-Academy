@@ -4,6 +4,7 @@ import productRouter from '../resources/product/product.router'
 import purchaseRouter from '../resources/purchase/purchase.router'
 import purchaseItemRouter from '../resources/purchaseItem/purchaseItem.router'
 import authRouter from '../resources/auth/auth.router'
+import userRouter from '../resources/user/user.router'
 
 
 const router = Router()
@@ -13,5 +14,6 @@ router.use('/product', productRouter)
 router.use('/purchaseItem', purchaseItemRouter)
 router.use('/purchase', purchaseRouter)
 router.use('/auth', authRouter)
+router.use('/user', userRouter)
 
 export default router

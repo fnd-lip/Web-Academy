@@ -12,7 +12,8 @@ function getEnv() {
       default: 'development',
     }),
     LOGGER_DIR: str({ default: 'logs' }),
-    BCRYPT_ROUNDS: num()
+    BCRYPT_ROUNDS: num(),
+    PASSWORD_ADMIN: str(),
   })
 }
 

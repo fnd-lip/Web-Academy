@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import fsPromise from 'fs/promises'
 import validateEnv from '../utils/getEnv'
-import { LogTipos } from './loggerTypes.js'
+import { LogTipos } from './loggerTypes'
 
 
 function logger(tipo: LogTipos) {

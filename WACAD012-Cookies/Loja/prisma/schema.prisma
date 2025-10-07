@@ -32,6 +32,8 @@ model Purchase {
   status Int @db.TinyInt
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  userId String? @db.Char(36)
+  user User? @relation(fields: [userId], references: [id])
   Items PurchaseItem[]
 }
 
@@ -65,4 +67,12 @@ model User {
   type UserType @relation(fields: [typeId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Purchase Purchase[]
+}
+
+model Session {
+  id String @id
+  sid String @unique
+  data String @db.Text
+  expiresAt DateTime
 }
