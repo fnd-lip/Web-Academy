@@ -4,7 +4,10 @@ import { signupSchema, loginSchema } from './auth.schema'
 import validator from '../../utils/validator'
 import { checkCredentials, createClient } from './auth.service'
 import { UserTypes } from '../userType/userType.constants'
-import { setUserIdToPurchase } from '../purchase/purchase.service'
+import {
+  findOrCreatePurchaseCart,
+  setUserIdToPurchase,
+} from '../purchase/purchase.service'
 
 const signup = async (req: Request, res: Response) => {
   if (req.method === 'GET') {
@@ -47,9 +50,9 @@ const login = async (req: Request, res: Response) => {
       req.session.isAuth = true
       req.session.userId = user.id
       if (req.session.guestPurchaseId)
-        await setUserIdToPurchase(
+        await findOrCreatePurchaseCart(
           req.session.guestPurchaseId,
-          req.session.userId
+          req.session.userId,
         )
       req.session.isAdmin = user.typeId === UserTypes.admin ? true : false
       res.redirect('/')
