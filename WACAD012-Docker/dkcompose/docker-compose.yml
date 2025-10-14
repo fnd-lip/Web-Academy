@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  back:
+    build:
+      context: .
+      dockerfile: dockerfile-backend
+    container_name: back
+    ports:
+      - "4000:4000"
+    networks:
+      - compose-net
+
+  front:
+    build:
+      context: .
+      dockerfile: dockerfile-frontend
+    container_name: front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - back
+    networks:
+      - compose-net
+
+networks:
+  compose-net:
+    driver: bridge
